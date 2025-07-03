@@ -10,6 +10,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { CheckCircle, Database, PieChart } from "lucide-react";
+import Link from "next/link";
 
 export default function Page() {
   const [sector, setSector] = useState<"public" | "private">("public");
@@ -68,26 +69,40 @@ export default function Page() {
                 </h3>
                 <form className="space-y-4">
                   <Input
-                    placeholder="Name"
+                    placeholder="Razón Social"
                     className="border-none focus:border-brand-darkGreen"
+                    onChange={(e) =>
+                      localStorage.setItem("razon_social", e.target.value)
+                    }
                   />
                   <Input
-                    placeholder="Email"
+                    placeholder="Correo"
                     type="email"
                     className="border-none focus:border-brand-darkGreen"
+                    onChange={(e) =>
+                      localStorage.setItem("correo", e.target.value)
+                    }
                   />
                   <Input
-                    placeholder="Subject"
+                    placeholder="Teléfono"
                     className="border-none focus:border-brand-darkGreen"
+                    onChange={(e) =>
+                      localStorage.setItem("telefono", e.target.value)
+                    }
                   />
                   <Textarea
-                    placeholder="Comment"
+                    placeholder="Mensaje"
                     rows={4}
                     className="border-none focus:border-brand-darkGreen resize-none"
+                    onChange={(e) =>
+                      localStorage.setItem("mensaje", e.target.value)
+                    }
                   />
-                  <Button className="w-full bg-brand-amber hover:bg-brand-amber text-white">
-                    Enviar
-                  </Button>
+                  <Link href={"/contacto"}>
+                    <Button className="w-full mt-4 bg-brand-amber hover:bg-brand-amber text-white">
+                      Continuar
+                    </Button>
+                  </Link>
                 </form>
               </div>
             </div>

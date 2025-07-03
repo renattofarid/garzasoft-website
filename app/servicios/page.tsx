@@ -1,3 +1,8 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import HeroSection from "@/components/HeroSection";
@@ -7,7 +12,12 @@ import { ChartPie, Database, Folder } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function GarzaSoftWebsite() {
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const productosRef = useRef<HTMLDivElement>(null);
+
   const services = [
     {
       icon: Folder,
@@ -33,7 +43,7 @@ export default function GarzaSoftWebsite() {
     {
       href: "https://www.gesrest.net/",
       name: "Gesrest",
-      description: "Software  para gestión de restaurantes",
+      description: "Software para gestión de restaurantes",
       img: "/productos/Logo_Gesrest.png",
       alt: "Imagen Gesrest",
       target: "_blank",
@@ -70,15 +80,41 @@ export default function GarzaSoftWebsite() {
     },
   ];
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(".service-card", {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: servicesRef.current,
+          start: "top 85%",
+        },
+      });
+
+      gsap.from(".product-card", {
+        opacity: 0,
+        scale: 0.95,
+        duration: 0.6,
+        stagger: 0.15,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: productosRef.current,
+          start: "top 85%",
+        },
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <div className="min-h-screen bg-brand-softGreen">
-      {/* Header */}
       <Header />
-
-      {/* Hero Section */}
       <HeroSection title="Servicios" />
 
-      {/* About Section */}
       <section className="py-16">
         <div className="max-w-screen-xl mx-auto px-6">
           <div className="w-full flex justify-center mb-8">
@@ -87,19 +123,20 @@ export default function GarzaSoftWebsite() {
             </h2>
           </div>
 
-          <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div
+            ref={servicesRef}
+            className="w-full grid grid-cols-1 lg:grid-cols-3 gap-6"
+          >
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 p-4"
+                className="service-card bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 p-4"
               >
                 <CardHeader className="flex flex-row items-center gap-2">
                   <service.icon className="w-12 h-12 text-brand-darkGreen" />
-
                   <h3 className="text-xl font-semibold">{service.title}</h3>
                 </CardHeader>
-
-                <CardContent className="flex flex-col items-center p-6">
+                <CardContent className="p-6">
                   <p className="text-brand-gray text-justify">
                     {service.description}
                   </p>
@@ -124,16 +161,18 @@ export default function GarzaSoftWebsite() {
           </h2>
         </div>
 
-        {/* 5 imagenes, 3 en una fila y las 2 en la siguiente fila, y las 2 de la otra fila tienen que estar en el centro */}
-        <div className="grid grid-cols-2 gap-5 mt-10 justify-center relative z-10 max-w-screen-xl mx-auto px-6">
+        <div
+          ref={productosRef}
+          className="grid grid-cols-2 gap-5 mt-10 justify-center relative z-10 max-w-screen-xl mx-auto px-6"
+        >
           {productos.map((producto, idx) => (
             <Link
               key={idx}
               href={producto.href}
               target={producto.target}
-              className="bg-black/70 p-4 flex gap-4 items-center justify-start"
+              className="product-card bg-black/70 p-4 flex gap-4 items-center justify-start"
             >
-              <div className="cursor-pointer relative size-20">
+              <div className="relative size-20">
                 <Image
                   src={producto.img}
                   alt={producto.alt}
@@ -148,7 +187,6 @@ export default function GarzaSoftWebsite() {
         </div>
       </section>
 
-      {/* Footer */}
       <Footer />
     </div>
   );

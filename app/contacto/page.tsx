@@ -19,6 +19,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { sendEmail } from "@/components/home/lib/coments.actions";
 import { successToast } from "@/lib/core.function";
+import { useEffect } from "react";
 
 const contactSchema = z.object({
   ruc: z
@@ -40,6 +41,26 @@ const contactSchema = z.object({
 type ContactFormValues = z.infer<typeof contactSchema>;
 
 export default function Page() {
+  const getLocalStorageValue = (key: string) => {
+    if (typeof window === "undefined") return "";
+    const value = localStorage.getItem(key);
+    return value && value.trim() !== "" ? value : "";
+  };
+
+  const defaultValuesFromStorage = {
+    razon_social: getLocalStorageValue("razon_social"),
+    telefono: getLocalStorageValue("telefono"),
+    correo: getLocalStorageValue("correo"),
+    mensaje: getLocalStorageValue("mensaje"),
+  };
+
+  useEffect(() => {
+    form.reset({
+      ...form.getValues(),
+      ...defaultValuesFromStorage,
+    });
+  }, []);
+
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: {

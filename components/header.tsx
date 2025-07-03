@@ -39,7 +39,7 @@ export default function Header() {
         }`}
       >
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
+          <Link className="flex items-center space-x-2" href={"/"}>
             <Image
               src={"/logo.png"}
               alt="GarzaSoft Logo"
@@ -47,7 +47,7 @@ export default function Header() {
               height={100}
               className="rounded-full"
             />
-          </div>
+          </Link>
 
           <div className="hidden md:flex items-center space-x-8">
             {links.map((link) => {

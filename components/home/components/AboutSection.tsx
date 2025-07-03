@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import gsap from "gsap";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 export default function AboutSection() {
@@ -116,14 +117,19 @@ export default function AboutSection() {
                       placeholder="Ingresa tu e-mail aquí"
                       className="w-full"
                       type="email"
+                      onChange={(e) =>
+                        localStorage.setItem("correo", e.target.value)
+                      }
                     />
                     <span className="text-xs text-muted-foreground">
                       Nos pondremos en contacto.
                     </span>
                   </div>
-                  <Button className="w-fit px-6 bg-brand-amber hover:bg-brand-amber/90 text-white animated-button">
-                    Enviar
-                  </Button>
+                  <Link href={"/contacto"}>
+                    <Button className="w-fit px-6 bg-brand-amber hover:bg-brand-amber/90 text-white animated-button">
+                      Continuar
+                    </Button>
+                  </Link>
                 </form>
               </div>
             </div>

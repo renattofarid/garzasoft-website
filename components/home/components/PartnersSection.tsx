@@ -59,7 +59,7 @@ export default function PartnersSection({ clients }: Props) {
   };
 
   return (
-    <section className="py-16 bg-[#edf5f4] overflow-hidden">
+    <section className="py-24 bg-[#edf5f4] overflow-hidden">
       <div className="max-w-screen-xl mx-auto px-4 text-center">
         <p className="text-[#737373] mb-8">
           Hemos trabajado en más de{" "}
