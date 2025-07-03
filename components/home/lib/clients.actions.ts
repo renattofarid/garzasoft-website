@@ -3,7 +3,7 @@ import { ClientResource } from "./clients.interface";
 
 export async function getClients(): Promise<ClientResource[]> {
   const { data } = await api.get<ClientResource[]>(
-    "/client?product=Mr. Soft&limit=5"
+    "/client?product=Mr. Soft&limit=50"
   );
   return data;
 }

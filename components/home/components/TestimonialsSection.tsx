@@ -4,21 +4,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import gsap from "gsap";
 import { Quote, Star } from "lucide-react";
 import { useEffect, useRef } from "react";
+import { CommentResource } from "../lib/coments.interface";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-const TESTIMONIALS = [
-  {
-    text: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-    name: "Tostao café",
-    role: "Market Researcher",
-  },
-  {
-    text: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-    name: "Tostao café",
-    role: "Market Researcher",
-  },
-];
+interface Props {
+  comments: CommentResource[];
+}
 
-export default function TestimonialsSection() {
+export default function TestimonialsSection({ comments }: Props) {
   const testimonialsRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -83,7 +76,7 @@ export default function TestimonialsSection() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-6 col-span-2">
-            {TESTIMONIALS.map((testimonial, idx) => (
+            {comments.map((comment, idx) => (
               <Card
                 key={idx}
                 className="testimonial-card bg-white animated-card"
@@ -98,16 +91,25 @@ export default function TestimonialsSection() {
                     ))}
                   </div>
                   <p className={`text-brand-gray text-sm mb-4`}>
-                    {testimonial.text}
+                    {comment.content}
                   </p>
-                  <div className="flex items-center py-4">
-                    <div className="w-10 h-10 bg-brand-gray rounded-full mr-3"></div>
+                  <div className="flex items-center gap-2 py-4">
+                    <Avatar>
+                      <AvatarImage
+                        src={comment.cliente.logo}
+                        alt={comment.person}
+                        className="rounded-full w-10 h-10"
+                      />
+                      <AvatarFallback>
+                        {comment.cliente.nombre.charAt(0).toUpperCase()}
+                      </AvatarFallback>
+                    </Avatar>
                     <div>
                       <p className="font-semibold text-brand-darkGreen">
-                        {testimonial.name}
+                        {comment.person}
                       </p>
                       <p className="text-sm text-brand-gray">
-                        {testimonial.role}
+                        {comment.position} - {comment.cliente.nombre}
                       </p>
                     </div>
                   </div>

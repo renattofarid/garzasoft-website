@@ -1,66 +1,52 @@
 "use client";
 
 import { Facebook, Instagram, Youtube } from "lucide-react";
+import Image from "next/image";
+
+const NAV_LINKS = [
+  { label: "Home", href: "/#" },
+  { label: "Nosotros", href: "/nosotros" },
+  { label: "Servicios", href: "/servicios" },
+  { label: "Experiencia", href: "/experiencia" },
+  { label: "Productos", href: "/productos" },
+  { label: "Clientes", href: "/clientes" },
+];
+
+const SOCIAL_LINKS = [
+  { icon: Facebook, href: "#" },
+  { icon: Instagram, href: "#" },
+  { icon: Youtube, href: "#" },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#041b16] py-12">
+    <footer className="bg-black py-12 rounded-t-3xl">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center space-y-8">
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-[#11b328] rounded-full flex items-center justify-center">
-              <span className="text-white font-bold">GS</span>
-            </div>
-            <span className="text-white font-semibold text-xl">GarzaSoft</span>
-          </div>
+          <Image src={"/logo.png"} alt="Logo" width={150} height={50} />
 
           <nav className="flex flex-wrap justify-center gap-8">
-            <a
-              href="#"
-              className="text-[#8da4a2] hover:text-white transition-colors"
-            >
-              Home
-            </a>
-            <a
-              href="#"
-              className="text-[#8da4a2] hover:text-white transition-colors"
-            >
-              Nosotros
-            </a>
-            <a
-              href="#"
-              className="text-[#8da4a2] hover:text-white transition-colors"
-            >
-              Servicios
-            </a>
-            <a
-              href="#"
-              className="text-[#8da4a2] hover:text-white transition-colors"
-            >
-              Experiencia
-            </a>
-            <a
-              href="#"
-              className="text-[#8da4a2] hover:text-white transition-colors"
-            >
-              Productos
-            </a>
-            <a
-              href="#"
-              className="text-[#8da4a2] hover:text-white transition-colors"
-            >
-              Clientes
-            </a>
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-white hover:text-white transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
           </nav>
 
           <div className="flex space-x-6">
-            <Facebook className="w-6 h-6 text-[#8da4a2] hover:text-white cursor-pointer transition-colors" />
-            <Instagram className="w-6 h-6 text-[#8da4a2] hover:text-white cursor-pointer transition-colors" />
-            <Youtube className="w-6 h-6 text-[#8da4a2] hover:text-white cursor-pointer transition-colors" />
+            {SOCIAL_LINKS.map(({ icon: Icon, href }, idx) => (
+              <a key={idx} href={href}>
+                <Icon className="w-6 h-6 text-white hover:text-white cursor-pointer transition-colors" />
+              </a>
+            ))}
           </div>
 
-          <div className="border-t border-[#8da4a2] w-full pt-8 text-center">
-            <p className="text-[#8da4a2] text-sm">
+          <div className="border-t border-white w-full pt-8 text-center">
+            <p className="text-white text-sm">
               Mr. Soft ©2024 All rights reserved
             </p>
           </div>
