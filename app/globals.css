@@ -23,6 +23,15 @@
   font-family: var(--font-roboto), sans-serif;
 }
 
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE y Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

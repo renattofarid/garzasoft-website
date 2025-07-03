@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Roboto, Manrope } from "next/font/google";
+import ButtonWhatsapp from "@/components/button-whatsapp";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${roboto.variable} ${manrope.variable} font-manrope`}>
         {children}
+        <ButtonWhatsapp />
       </body>
     </html>
   );
