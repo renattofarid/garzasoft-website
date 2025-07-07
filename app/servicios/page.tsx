@@ -56,7 +56,7 @@ export default function GarzaSoftWebsite() {
       alt: "Imagen HotelHub",
     },
     {
-      href: "#",
+      href: "https://pulso-web-ten.vercel.app/",
       name: "Pulso",
       description: "Software para gestión de clínicas",
       img: "/productos/Logo_Pulso.png",
@@ -132,12 +132,14 @@ export default function GarzaSoftWebsite() {
                 key={index}
                 className="service-card bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 p-4"
               >
-                <CardHeader className="flex flex-row items-center gap-2">
-                  <service.icon className="w-12 h-12 text-brand-darkGreen" />
-                  <h3 className="text-xl font-semibold">{service.title}</h3>
+                <CardHeader className="flex flex-row items-center gap-2 p-2 md:p-6">
+                  <service.icon className="size-6 md:size-12 text-brand-darkGreen" />
+                  <h3 className="md:text-xl font-semibold !mt-0">
+                    {service.title}
+                  </h3>
                 </CardHeader>
-                <CardContent className="p-6">
-                  <p className="text-brand-gray text-justify">
+                <CardContent className="p-2 md:p-6">
+                  <p className="text-brand-gray text-sm md:text-base text-justify">
                     {service.description}
                   </p>
                 </CardContent>
@@ -156,14 +158,14 @@ export default function GarzaSoftWebsite() {
         />
 
         <div className="w-full flex justify-center mb-8 relative z-10">
-          <h2 className="text-6xl font-bold text-white p-1 px-4 bg-brand-darkGreen mb-8 uppercase">
+          <h2 className="text-3xl md:text-6xl font-bold text-white p-1 px-4 bg-brand-darkGreen mb-8 uppercase">
             Nuestros Productos
           </h2>
         </div>
 
         <div
           ref={productosRef}
-          className="grid grid-cols-2 gap-5 mt-10 justify-center relative z-10 max-w-screen-xl mx-auto px-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10 justify-center relative z-10 max-w-screen-xl mx-auto px-6"
         >
           {productos.map((producto, idx) => (
             <Link
@@ -172,7 +174,7 @@ export default function GarzaSoftWebsite() {
               target={producto.target}
               className="product-card bg-black/70 p-4 flex gap-4 items-center justify-start"
             >
-              <div className="relative size-20">
+              <div className="relative size-14 md:size-20 aspect-square">
                 <Image
                   src={producto.img}
                   alt={producto.alt}
@@ -181,7 +183,9 @@ export default function GarzaSoftWebsite() {
                 />
               </div>
               <Separator className="h-full w-0.5 bg-brand-gray" />
-              <span className="text-white text-lg">{producto.description}</span>
+              <span className="text-white text-sm md:text-lg">
+                {producto.description}
+              </span>
             </Link>
           ))}
         </div>

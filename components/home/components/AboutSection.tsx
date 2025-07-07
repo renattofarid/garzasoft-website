@@ -66,7 +66,7 @@ export default function AboutSection() {
     <section ref={aboutRef} className="py-16 bg-[#edf5f4]">
       <div className="max-w-screen-xl mx-auto px-4">
         <div className="grid lg:grid-cols-3 gap-12 items-start">
-          <div className="about-image relative w-full h-full">
+          <div className="about-image relative w-full h-full aspect-square">
             <Image
               src="/aboutus/team.jpg"
               alt="Team working together"
@@ -91,9 +91,11 @@ export default function AboutSection() {
                   maximizar resultados. Con amplia trayectoria en diversos
                   sectores, nos comprometemos con tu éxito.
                 </p>
-                <Button className="bg-brand-amber hover:bg-brand-amber/90 text-white rounded-full px-6 animated-button">
-                  Conocer más
-                </Button>
+                <Link href="/nosotros">
+                  <Button className="bg-brand-amber hover:bg-brand-amber/90 text-white rounded-full px-6 animated-button">
+                    Conocer más
+                  </Button>
+                </Link>
               </div>
 
               <div className="relative h-full w-full">
@@ -106,8 +108,8 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <div className="flex justify-end w-ful">
-              <div className="w-1/2">
+            <div className="flex justify-end w-full">
+              <div className="w-full md:w-1/2">
                 <h3 className="text-sm font-semibold text-[#041b16] mb-4">
                   Contáctanos
                 </h3>
@@ -126,7 +128,7 @@ export default function AboutSection() {
                     </span>
                   </div>
                   <Link href={"/contacto"}>
-                    <Button className="w-fit px-6 bg-brand-amber hover:bg-brand-amber/90 text-white animated-button">
+                    <Button className="w-fit px-6 bg-brand-amber hover:bg-brand-amber/90 text-white animated-button rounded-full">
                       Continuar
                     </Button>
                   </Link>

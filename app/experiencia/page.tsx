@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { CheckCircle, Database, PieChart } from "lucide-react";
+import { Check, Database, PieChart } from "lucide-react";
 import Link from "next/link";
 
 export default function Page() {
@@ -33,7 +33,7 @@ export default function Page() {
 
       <main className="bg-brand-softGreen py-16">
         <div className="max-w-screen-xl mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-4 md:gap-8">
             {/* Sidebar */}
             <div className="lg:col-span-1">
               <div className="space-y-2 mb-8">
@@ -63,7 +63,7 @@ export default function Page() {
               </div>
 
               {/* Contact Form */}
-              <div className="rounded-lg py-6">
+              <div className="rounded-lg py-6 hidden lg:block">
                 <h3 className="text-black text-xl font-semibold mb-4">
                   Contáctanos
                 </h3>
@@ -133,7 +133,9 @@ export default function Page() {
                             key={index}
                             className="flex items-center space-x-3"
                           >
-                            <CheckCircle className="size-4 text-brand-amber" />
+                            <div className="w-fit aspect-square p-0.5 bg-brand-amber rounded-full flex-shrink-0">
+                              <Check className="size-4 text-white" />
+                            </div>
                             <span className="text-black text-sm">{item}</span>
                           </div>
                         ))}
@@ -169,7 +171,9 @@ export default function Page() {
                             key={index}
                             className="flex items-center space-x-3"
                           >
-                            <div className="w-2 h-2 bg-brand-amber rounded-full flex-shrink-0" />
+                            <div className="w-fit aspect-square p-0.5 bg-brand-amber rounded-full flex-shrink-0">
+                              <Check className="size-4 text-white" />
+                            </div>
                             <span className="text-black text-sm">{item}</span>
                           </div>
                         ))}
@@ -188,6 +192,48 @@ export default function Page() {
                 )}
               </div>
             </div>
+          </div>
+
+          {/* CONTACTANOS */}
+          <div className="rounded-lg py-6 lg:hidden block">
+            <h3 className="text-black text-xl font-semibold mb-4">
+              Contáctanos
+            </h3>
+            <form className="space-y-4">
+              <Input
+                placeholder="Razón Social"
+                className="border-none focus:border-brand-darkGreen"
+                onChange={(e) =>
+                  localStorage.setItem("razon_social", e.target.value)
+                }
+              />
+              <Input
+                placeholder="Correo"
+                type="email"
+                className="border-none focus:border-brand-darkGreen"
+                onChange={(e) => localStorage.setItem("correo", e.target.value)}
+              />
+              <Input
+                placeholder="Teléfono"
+                className="border-none focus:border-brand-darkGreen"
+                onChange={(e) =>
+                  localStorage.setItem("telefono", e.target.value)
+                }
+              />
+              <Textarea
+                placeholder="Mensaje"
+                rows={4}
+                className="border-none focus:border-brand-darkGreen resize-none"
+                onChange={(e) =>
+                  localStorage.setItem("mensaje", e.target.value)
+                }
+              />
+              <Link href={"/contacto"}>
+                <Button className="w-full mt-4 bg-brand-amber hover:bg-brand-amber text-white">
+                  Continuar
+                </Button>
+              </Link>
+            </form>
           </div>
         </div>
       </main>

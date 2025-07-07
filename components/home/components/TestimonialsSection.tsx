@@ -59,7 +59,7 @@ export default function TestimonialsSection({ comments }: Props) {
     <section ref={testimonialsRef} className="bg-brand-darkGreen py-16">
       <div className="max-w-screen-xl mx-auto px-4">
         <div className="grid lg:grid-cols-3 gap-12 items-center">
-          <div className="testimonials-content col-span-1">
+          <div className="testimonials-content col-span-2 lg:col-span-1">
             <p className="text-brand-amber font-semibold mb-4 uppercase tracking-wide">
               TESTIMONIOS
             </p>

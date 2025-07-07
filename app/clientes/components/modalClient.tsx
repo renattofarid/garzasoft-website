@@ -25,14 +25,14 @@ export function ClientModal({ client, isOpen, onClose }: ClientModalProps) {
   return (
     <>
       <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-        <DialogContent className="max-w-screen-md overflow-hidden rounded-lg border-0 bg-plome">
+        <DialogContent className="max-w-screen-md overflow-hidden rounded-lg border-0 bg-brand-softGreen">
           {/* Department tags at the very top of the modal */}
           {hasDepartments && (
             <div className="flex flex-wrap gap-2 justify-center mt-2">
               {client.departments.map((dept) => (
                 <div
                   key={dept.id}
-                  className="bg-maindark text-gray-700 text-sm py-1 px-4 rounded-full "
+                  className="bg-brand-green text-white text-sm py-1 px-4 rounded-full "
                 >
                   {dept.name}
                 </div>
@@ -58,9 +58,9 @@ export function ClientModal({ client, isOpen, onClose }: ClientModalProps) {
               <div className="flex flex-col h-full">
                 {hasComment ? (
                   <div className="relative">
-                    <div className="absolute h-full bg-main w-1/6 left-0 rounded-t-xl"></div>
-                    <div className="absolute h-full bg-main w-2/6 -bottom-5 left-0 rounded-t-xl"></div>
-                    <div className="relative z-10 h-fit bg-plome w-5/6 right-0 border-8 border-t-0 border-plome rounded-tr-none md:rounded-lg ml-auto">
+                    <div className="absolute h-full bg-brand-green w-1/6 left-0 rounded-t-xl"></div>
+                    <div className="absolute h-full bg-brand-green w-2/6 -bottom-5 left-0 rounded-t-xl"></div>
+                    <div className="relative z-10 h-fit bg-brand-softGreen w-5/6 right-0 border-8 border-t-0 border-brand-softGreen rounded-tr-none md:rounded-lg ml-auto">
                       <div className="flex flex-col items-center justify-center h-fit gap-2 p-4">
                         <div className="h-40 relative w-full mb-2">
                           <Image
@@ -73,11 +73,11 @@ export function ClientModal({ client, isOpen, onClose }: ClientModalProps) {
                           />
                         </div>
                         <div>
-                          <h2 className="text-lg md:text-xl text-center font-bold text-navy uppercase">
+                          <h2 className="text-lg md:text-xl text-center font-bold text-white uppercase">
                             {client.nombre}
                           </h2>
                           {hasComment && (
-                            <p className="text-navy text-center text-sm">
+                            <p className="text-white text-center text-sm">
                               Experiencia
                             </p>
                           )}
@@ -86,7 +86,7 @@ export function ClientModal({ client, isOpen, onClose }: ClientModalProps) {
                     </div>
                   </div>
                 ) : (
-                  <div className="h-full bg-plome w-full right-0 border-8 border-t-0 border-plome rounded-tr-none md:rounded-lg">
+                  <div className="h-full bg-brand-softGreen w-full right-0 border-8 border-t-0 border-brand-softGreen rounded-tr-none md:rounded-lg">
                     <div className="flex flex-col items-center justify-center h-full gap-2 p-4">
                       <div className="flex flex-col items-center justify-center h-fit gap-2 p-4">
                         <div className="h-40 relative w-full mb-2">
@@ -100,12 +100,12 @@ export function ClientModal({ client, isOpen, onClose }: ClientModalProps) {
                           />
                         </div>
                         <div>
-                          <h2 className="text-lg md:text-xl text-center font-bold text-navy uppercase mt-2">
+                          <h2 className="text-lg md:text-xl text-center font-bold text-darkGreen uppercase mt-2">
                             {client.nombre}
                           </h2>
                         </div>
                       </div>
-                      <div className="bg-main p-2 rounded-xl w-full">
+                      <div className="bg-brand-green p-2 rounded-xl w-full">
                         {hasDepartments && (
                           <div className="flex flex-col gap-2">
                             {client.departments.map((dept, deptIndex) => {
@@ -164,8 +164,8 @@ export function ClientModal({ client, isOpen, onClose }: ClientModalProps) {
                 )}
 
                 {hasComment && (
-                  <div className="h-fit rounded-xl bg-main p-4 flex flex-col gap-4 pt-10">
-                    <div className="bg-main flex-grow relative">
+                  <div className="h-fit rounded-xl bg-brand-green p-4 flex flex-col gap-4 pt-10">
+                    <div className="bg-brand-green flex-grow relative">
                       {/* Quote mark */}
                       <div className="absolute top-0 right-0 text-3xl font-serif text-white/80">
                         <Quote className="w-8 h-8 md:w-10 md:h-10 rotate-180 fill-[#99413B] text-[#99413B]" />

@@ -65,9 +65,9 @@ export default function WhyWorkWithUsSection() {
   }, [openIndex]);
 
   return (
-    <section className="py-16 bg-brand-softGreen">
+    <section className="pb-16 md:py-16 bg-brand-softGreen">
       <div className="max-w-screen-xl mx-auto px-6 relative">
-        <Wifi className="absolute bottom-0 -rotate-45 left-0 w-80 h-80 text-brand-darkGreen opacity-20" />
+        <Wifi className="absolute hidden md:block bottom-0 -rotate-45 left-0 w-80 h-80 text-brand-darkGreen opacity-20" />
         <h2 className="text-4xl font-extrabold text-center text-gray-900 mb-12">
           ¿Por qué trabajar con nosotros?
         </h2>
@@ -84,20 +84,20 @@ export default function WhyWorkWithUsSection() {
               >
                 <CollapsibleTrigger asChild>
                   <div
-                    className={`cursor-pointer p-6 w-full transition-colors duration-300 border-b`}
+                    className={`cursor-pointer md:p-6 w-full transition-colors duration-300 border-b`}
                     role="button"
                   >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-2">
                         <div
-                          className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${
+                          className={`min-w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${
                             isOpen ? "text-brand-amber" : ""
                           }`}
                         >
                           {String(index + 1).padStart(2, "0")}
                         </div>
                         <h3
-                          className={`text-xl font-medium text-left ${
+                          className={`md:text-xl font-medium text-left ${
                             isOpen ? "text-brand-amber" : "text-gray-900"
                           }`}
                         >
@@ -106,9 +106,9 @@ export default function WhyWorkWithUsSection() {
                       </div>
 
                       {isOpen ? (
-                        <CircleMinus className="w-5 h-5 text-brand-amber" />
+                        <CircleMinus className="min-w-5 h-5 text-brand-amber" />
                       ) : (
-                        <CirclePlus className="w-5 h-5 text-brand-amber" />
+                        <CirclePlus className="min-w-5 h-5 text-brand-amber" />
                       )}
                     </div>
                   </div>
@@ -119,7 +119,7 @@ export default function WhyWorkWithUsSection() {
                     ref={(el) => {
                       contentRefs.current[index] = el;
                     }}
-                    className="mt-4 pl-12 pr-4 text-sm text-gray-600 rounded-b-lg"
+                    className="mt-4 pl-12 pr-4 text-xs md:text-sm text-gray-600 rounded-b-lg"
                   >
                     {item.content}
                   </div>
