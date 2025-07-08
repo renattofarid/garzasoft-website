@@ -16,6 +16,42 @@ export default function PageF() {
   const sectionRef = useRef(null);
   const teamRef = useRef(null);
 
+  const teamMembers = [
+    {
+      img: "/aboutus/Gilberto.jpg",
+      name: "Gilberto Martin Ampuero Pasco",
+      rol: "CEO Fundador - Director General",
+      items: [
+        "Magister en Ciencias con Mención en Ingeniería de Sistemas",
+        "Especialista en tecnología y desarrollo de software, con amplia experiencia en soluciones empresariales.",
+      ],
+    },
+    {
+      img: "/aboutus/Jose.jpg",
+      name: "José Alexander Samamé Nizama",
+      rol: "Líder de Proyectos de Desarrollo de Software",
+      items: [
+        "Experto en gestión de proyectos, análisis de requisitos, arquitectura de software y metodologías ágiles.",
+      ],
+    },
+    {
+      img: "/aboutus/Renatto.jpg",
+      name: "Renatto Farid Perleche Alvitez",
+      rol: "Líder Técnico Front-End y UX/UI",
+      items: [
+        "Responsable de la dirección técnica y estratégica de proyectos front-end, así como de la gestión de recursos relacionados con la experiencia de usuario (UX) y diseño de interfaces (UI).",
+      ],
+    },
+    {
+      img: "/aboutus/Sergio.jpg",
+      name: "Sergio Huamán Gavidia",
+      rol: "Proyectos de Automatización de Procesos.",
+      items: [
+        "Experto en Automatización, diseño por gestión de procesos, Orquestación, mejora continua de soluciones.",
+      ],
+    },
+  ];
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -91,7 +127,7 @@ export default function PageF() {
                   <div className="space-y-3 mt-4">
                     <div className="flex items-center space-x-3">
                       <div className="w-5 h-5 bg-brand-darkGreen rounded-full flex items-center justify-center">
-                        <Check className="w-3 h-3 text-white" />
+                        <Check className="min-w-3 min-h-3 aspect-square text-white" />
                       </div>
                       <span className="text-gray-700">
                         Contamos con un equipo de profesionales altamente
@@ -100,7 +136,7 @@ export default function PageF() {
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-5 h-5 bg-brand-darkGreen rounded-full flex items-center justify-center">
-                        <Check className="w-3 h-3 text-white" />
+                        <Check className="min-w-3 min-h-3 aspect-square text-white" />
                       </div>
                       <span className="text-gray-700">
                         Ofrecemos soluciones tecnológicas personalizadas para
@@ -109,23 +145,13 @@ export default function PageF() {
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-5 h-5 bg-brand-darkGreen rounded-full flex items-center justify-center">
-                        <Check className="w-3 h-3 text-white" />
+                        <Check className="min-w-3 min-h-3 aspect-square text-white" />
                       </div>
                       <span className="text-gray-700">
                         Nuestro compromiso es brindar un soporte técnico de
                         calidad.
                       </span>
                     </div>
-                  </div>
-
-                  <div className="w-full flex justify-end">
-                    <Image
-                      src="/aboutus/rate.png"
-                      alt="Rate"
-                      width={200}
-                      height={50}
-                      className="mt-6 object-cover"
-                    />
                   </div>
                 </TabsContent>
                 <TabsContent value="vision" className="mt-6">
@@ -140,7 +166,7 @@ export default function PageF() {
                   <div className="space-y-3 mt-4">
                     <div className="flex items-center space-x-3">
                       <div className="w-5 h-5 bg-brand-darkGreen rounded-full flex items-center justify-center">
-                        <Check className="w-3 h-3 text-white" />
+                        <Check className="min-w-3 min-h-3 aspect-square text-white" />
                       </div>
                       <span className="text-gray-700">
                         Contamos con un equipo de profesionales altamente
@@ -149,7 +175,7 @@ export default function PageF() {
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-5 h-5 bg-brand-darkGreen rounded-full flex items-center justify-center">
-                        <Check className="w-3 h-3 text-white" />
+                        <Check className="min-w-3 min-h-3 aspect-square text-white" />
                       </div>
                       <span className="text-gray-700">
                         Ofrecemos soluciones tecnológicas personalizadas para
@@ -158,23 +184,13 @@ export default function PageF() {
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-5 h-5 bg-brand-darkGreen rounded-full flex items-center justify-center">
-                        <Check className="w-3 h-3 text-white" />
+                        <Check className="min-w-3 min-h-3 aspect-square text-white" />
                       </div>
                       <span className="text-gray-700">
                         Nuestro compromiso es brindar un soporte técnico de
                         calidad.
                       </span>
                     </div>
-                  </div>
-
-                  <div className="w-full flex justify-end">
-                    <Image
-                      src="/aboutus/rate.png"
-                      alt="Rate"
-                      width={200}
-                      height={50}
-                      className="mt-6 object-cover"
-                    />
                   </div>
                 </TabsContent>
                 <TabsContent value="valores" className="mt-6">
@@ -207,15 +223,15 @@ export default function PageF() {
                     ].map((valor, idx) => (
                       <div
                         key={idx}
-                        className="flex items-start gap-4 bg-white rounded-xl p-4 shadow-sm"
+                        className="flex flex-col items-start gap-2 bg-white rounded-xl p-4 shadow-sm"
                       >
-                        <div className="flex-shrink-0">
+                        <div className="flex gap-3 items-center">
                           <valor.icon className="w-8 h-8 text-brand-darkGreen" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-brand-darkGreen mb-1">
+                          <h4 className="font-semibold text-brand-darkGreen">
                             {valor.title}
                           </h4>
+                        </div>
+                        <div>
                           <p className="text-gray-700 text-sm">
                             {valor.description}
                           </p>
@@ -240,7 +256,7 @@ export default function PageF() {
 
       <WhyWorkWithUsSection />
 
-      <section className="py-16 bg-brand-softGreen" ref={teamRef}>
+      <section className="pb-16 md:py-16 bg-brand-softGreen" ref={teamRef}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12 fade-in">
             <p className="text-[#006d5b] font-semibold mb-2">NUESTRO EQUIPO</p>
@@ -254,7 +270,7 @@ export default function PageF() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {["Gilberto", "Jose", "Renatto", "Sergio"].map((_, idx) => (
+            {teamMembers.map((_, idx) => (
               <Card
                 key={idx}
                 className="text-center overflow-hidden team-member"
@@ -262,19 +278,25 @@ export default function PageF() {
                 <CardContent className="p-0">
                   <div className="bg-white w-full aspect-[3/4] flex items-center justify-center relative">
                     <Image
-                      src={`/aboutus/${_}.jpg`}
-                      alt={_}
+                      src={`${_.img}`}
+                      alt={_.name}
                       className="object-cover rounded-xl p-4"
                       fill
                     />
                   </div>
-                  <div className="p-6 w-4/5 -mt-10 relative z-20 bg-white rounded-lg mr-auto">
+                  <div className="pl-4 p-4 w-4/5 -mt-10 relative z-20 bg-white rounded-lg mr-auto">
                     <h3 className="font-semibold text-gray-900 mb-1 w-full text-start">
-                      {_}
+                      {_.name}
                     </h3>
-                    <p className="text-brand-amber font-medium text-sm mb-4 w-full text-start">
-                      Rol
+                    <p className="text-brand-amber font-medium text-xs w-full text-start">
+                      {_.rol}
                     </p>
+                  </div>
+
+                  <div className="list-disc p-4 pt-0 list-inside text-gray-700 text-xs text-start space-y-1">
+                    {_.items.map((item, itemIdx) => (
+                      <li key={itemIdx}>{item}</li>
+                    ))}
                   </div>
                 </CardContent>
               </Card>

@@ -84,7 +84,7 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="w-64 sm:w-72 bg-black text-white"
+                className="w-64 sm:w-72 bg-black text-white border-none"
               >
                 <SheetHeader className="text-left text-lg font-bold mb-4">
                   Menú

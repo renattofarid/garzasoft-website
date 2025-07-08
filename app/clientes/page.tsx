@@ -56,19 +56,19 @@ function ClientPage() {
       <HeroSection title="Nuestros clientes" />
       <div
         ref={sectionRef}
-        className="flex min-h-screen flex-col items-center p-12 bg-brand-softGreen relative"
+        className="flex min-h-screen flex-col items-center py-10 px-4 md:p-12 bg-brand-softGreen relative"
       >
         {/* Mobile */}
         <div className="block md:hidden fade-in">
           <h1 className="text-brand-darkGreen text-center font-bold text-2xl">
             Nuestros clientes
           </h1>
-          <p className="text-brand-darkGreen text-center font-light pt-5 pb-10">
+          <p className="text-brand-darkGreen text-center font-light pt-5 pb-5 md:pb-10 text-sm md:text-base">
             En Garzasoft, contamos con más de 20 años de experiencia en el
             desarrollo de software, brindando soluciones innovadoras y
             personalizadas para todo tipo de negocios.
           </p>
-          <p className="text-brand-darkGreen text-center font-normal  pb-5">
+          <p className="text-brand-darkGreen text-center font-normal pb-5">
             Más de{" "}
             <span className="text-brand-blue font-bold italic">
               300 empresas
@@ -78,7 +78,7 @@ function ClientPage() {
         </div>
 
         <div className="grid md:hidden grid-cols-6 gap-3 justify-items-center fade-in">
-          <div className="col-span-3 flex flex-col items-center justify-center">
+          <div className="col-span-6 md:col-span-3 flex flex-col items-center justify-center">
             <p className="text-brand-darkGreen text-center font-bold text-lg">
               ¿Qué tenían en común <br /> estas empresas?
             </p>
@@ -87,9 +87,9 @@ function ClientPage() {
           {CLIENT_ISSUES_ICONS.map(({ Icon, label }, idx) => (
             <div
               key={idx}
-              className={`col-span-${
+              className={`col-span-3 md:col-span-${
                 idx === 0 ? 3 : 2
-              } p-3 rounded-lg bg-[#D1EDEB] flex flex-col items-center self-start`}
+              } p-3 h-full rounded-lg bg-[#D1EDEB] flex flex-col items-center self-start`}
             >
               <Icon className="size-20 text-brand-green" />
               <p className="text-xs font-semibold pt-2 text-brand-darkGreen text-center">
@@ -98,8 +98,8 @@ function ClientPage() {
             </div>
           ))}
 
-          <div className="col-start-1 col-span-4">
-            <p className="text-brand-darkGreen text-left font-bold text-2xl">
+          <div className="col-start-1 col-span-6 md:col-span-4">
+            <p className="text-brand-darkGreen text-left font-bold text-2xl pt-6">
               Clientes Garzasoft
             </p>
             <p className="text-brand-darkGreen text-left text-sm font-light pt-5 pb-5">

@@ -47,7 +47,7 @@ function ClientsPage() {
   const availableDepartments = getDepartmentsByType(selectedType);
 
   return (
-    <main className="flex flex-col w-full p-6 items-center text-red">
+    <main className="flex flex-col w-full md:p-6 items-center">
       {/* Main Content Section */}
       <section className="container max-w-6xl w-full px-4 md:px-6 pb-20">
         <div className="flex flex-col md:flex-row gap-4">
@@ -189,7 +189,7 @@ function ClientsPage() {
               <h3 className="text-[15px] font-bold text-gray-700 mb-3">
                 Escoge la categoría:
               </h3>
-              <div className="grid grid-cols-3 md:grid-cols-4 gap-2">
+              <div className="flex flex-wrap gap-x-2 gap-y-0.5">
                 {types.map((type, index) => (
                   <Button
                     key={index}
