@@ -18,7 +18,7 @@ export default function PageF() {
 
   const teamMembers = [
     {
-      img: "/aboutus/Gilberto.jpg",
+      img: "/aboutus/martin.png",
       name: "Gilberto Martin Ampuero Pasco",
       rol: "CEO Fundador - Director General",
       items: [
@@ -27,7 +27,7 @@ export default function PageF() {
       ],
     },
     {
-      img: "/aboutus/Jose.jpg",
+      img: "/aboutus/alex.png",
       name: "José Alexander Samamé Nizama",
       rol: "Líder de Proyectos de Desarrollo de Software",
       items: [
@@ -35,7 +35,7 @@ export default function PageF() {
       ],
     },
     {
-      img: "/aboutus/Renatto.jpg",
+      img: "/aboutus/renatto.png",
       name: "Renatto Farid Perleche Alvitez",
       rol: "Líder Técnico Front-End y UX/UI",
       items: [
@@ -43,7 +43,7 @@ export default function PageF() {
       ],
     },
     {
-      img: "/aboutus/Sergio.jpg",
+      img: "/aboutus/sergio.png",
       name: "Sergio Huamán Gavidia",
       rol: "Proyectos de Automatización de Procesos.",
       items: [
@@ -285,7 +285,7 @@ export default function PageF() {
                     />
                   </div>
                   <div className="pl-4 p-4 w-4/5 -mt-10 relative z-20 bg-white rounded-lg mr-auto">
-                    <h3 className="font-semibold text-gray-900 mb-1 w-full text-start">
+                    <h3 className="font-bold text-lg text-gray-900 mb-1 w-full text-start">
                       {_.name}
                     </h3>
                     <p className="text-brand-amber font-medium text-xs w-full text-start">

@@ -54,6 +54,7 @@ export default function GarzaSoftWebsite() {
       description: "Software para gestión de hoteles",
       img: "/productos/Logo_HotelHub.png",
       alt: "Imagen HotelHub",
+      target: "_blank",
     },
     {
       href: "https://pulso-web-ten.vercel.app/",
@@ -61,6 +62,7 @@ export default function GarzaSoftWebsite() {
       description: "Software para gestión de clínicas",
       img: "/productos/Logo_Pulso.png",
       alt: "Imagen Pulso",
+      target: "_blank",
     },
     {
       href: "https://360sys.com.pe/",

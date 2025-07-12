@@ -143,7 +143,7 @@ export default function Page() {
                     </div>
                     <div>
                       <Image
-                        src="/experiencia/sectores.jpg"
+                        src="/experiencia/public.jpg"
                         alt="Sector público"
                         width={500}
                         height={400}

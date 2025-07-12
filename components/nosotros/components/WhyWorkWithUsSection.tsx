@@ -17,35 +17,25 @@ export default function WhyWorkWithUsSection() {
     {
       title:
         "Solucionamos sus problemas mediante el correcto uso de las Tecnologías de Información",
-      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel
-      gravida libero. Donec lacinia, nisl at tincidunt pretium, massa sem
-      ultrices erat, at sagittis nisi lorem ut metus.`,
+      content: `Aplicamos nuestro conocimiento en tecnologías de la información para resolver de forma efectiva los desafíos que enfrenta su empresa, desarrollando soluciones prácticas, escalables y adaptadas a su realidad operativa.`,
     },
     {
       title: "Optimizamos sus procesos de negocio",
-      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel
-      gravida libero. Donec lacinia, nisl at tincidunt pretium, massa sem
-        ultrices erat, at sagittis nisi lorem ut metus.`,
+      content: `Analizamos, rediseñamos y automatizamos sus procesos clave para que su empresa funcione con mayor eficiencia, reduciendo tiempos, costos y errores, y permitiéndole enfocarse en lo que realmente importa: crecer.`,
     },
     {
       title:
         "Brindamos herramientas para que realice control sobre sus recursos",
-      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel
-      gravida libero. Donec lacinia, nisl at tincidunt pretium, massa sem
-        ultrices erat, at sagittis nisi lorem ut metus.`,
+      content: `Ponemos a su disposición soluciones tecnológicas que le permiten monitorear, analizar y gestionar sus recursos con precisión, promoviendo una toma de decisiones informada y en tiempo real.`,
     },
     {
       title:
         "Contamos con un grupo humano con más de una década de experiencia en el sector",
-      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel
-      gravida libero. Donec lacinia, nisl at tincidunt pretium, massa sem
-        ultrices erat, at sagittis nisi lorem ut metus.`,
+      content: `Nuestro equipo está formado por profesionales con amplia trayectoria en el desarrollo e implementación de software empresarial, lo que garantiza un acompañamiento experto en cada etapa de su proyecto.`,
     },
     {
       title: "Nuestros precios se adaptan al mercado",
-      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel
-      gravida libero. Donec lacinia, nisl at tincidunt pretium, massa sem
-        ultrices erat, at sagittis nisi lorem ut metus.`,
+      content: `Ofrecemos soluciones con una excelente relación calidad-precio, adecuándonos a las posibilidades de su empresa sin comprometer la calidad del servicio ni el alcance de nuestras soluciones.`,
     },
   ];
 
