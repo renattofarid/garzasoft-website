@@ -92,7 +92,7 @@ export default function PageF() {
           <div className="grid lg:grid-cols-2 gap-12 items-center fade-in">
             <div className="fade-in">
               <h2 className="text-4xl font-bold text-gray-900 mb-8">
-                Quienes Somos
+                ¿Quienes Somos?
               </h2>
               <Tabs defaultValue="mision" className="mb-8">
                 <TabsList className="grid w-full grid-cols-3 bg-white">
