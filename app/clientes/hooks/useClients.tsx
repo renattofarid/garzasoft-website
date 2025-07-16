@@ -50,10 +50,20 @@ export const useClientsStore = create<ClientsStore>((set, get) => ({
       console.log("Clientes cargados:", clients);
 
       // Extraer tipos únicos
-      const types = [
-        ...new Set(clients.map((client) => client.type).filter(Boolean)),
-      ];
-      console.log("Tipos extraídos:", types);
+      // Contar clientes por tipo
+      const typeCounts: Record<string, number> = {};
+      clients.forEach((client) => {
+        if (client.type) {
+          typeCounts[client.type] = (typeCounts[client.type] || 0) + 1;
+        }
+      });
+
+      // Ordenar los tipos por cantidad de clientes (descendente)
+      const types = Object.entries(typeCounts)
+        .sort((a, b) => b[1] - a[1])
+        .map(([type]) => type);
+
+      console.log("Tipos ordenados por cantidad de clientes:", types);
 
       // Extraer departamentos únicos de todos los clientes
       const allDepartments: string[] = [];
