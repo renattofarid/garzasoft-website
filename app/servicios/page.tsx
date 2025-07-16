@@ -67,7 +67,7 @@ export default function GarzaSoftWebsite() {
     {
       href: "https://360sys.com.pe/",
       name: "360sys",
-      description: "Software para gestión de empresas",
+      description: "Software para empresas de Punto de Venta",
       img: "/productos/Logo_360.png",
       alt: "Imagen 360sys",
       target: "_blank",

@@ -67,7 +67,7 @@ const PRODUCTS = [
   {
     id: "comprobantee",
     name: "Comprobante-e",
-    quantity: 30,
+    quantity: 500,
     description: "Generador de comprobantes electrónicos",
     caption:
       "Emite tus facturas y boletas electrónicas con seguridad, sin contratiempos y desde cualquier lugar.",
