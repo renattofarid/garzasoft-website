@@ -5,8 +5,8 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 const STATS = [
-  { value: 300, label: "Proyectos Completados" },
-  { value: 150, label: "Clientes Satisfechos" },
+  { value: 100, label: "Proyectos Completados" },
+  { value: 500, label: "Clientes Satisfechos" },
   { value: 20, label: "Años de Experiencia" },
   { value: 15, label: "Rubros Atendidos" },
 ];
