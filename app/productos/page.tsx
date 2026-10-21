@@ -15,7 +15,19 @@ import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const PRODUCTS = [
+type Product = {
+  id: string;
+  name: string;
+  quantity?: number;
+  description: string;
+  caption: string;
+  image: string;
+  href: string;
+  highlightColor: string;
+  badgeColor: string;
+};
+
+const PRODUCTS: Product[] = [
   {
     id: "gesrest",
     name: "GESREST",
@@ -75,6 +87,39 @@ const PRODUCTS = [
     href: "https://comprobante-e.com/",
     highlightColor: "#cd3b27",
     badgeColor: "#cd3b27",
+  },
+  {
+    id: "gestiobras",
+    name: "Gestiobras",
+    description: "Software para gestión de constructoras",
+    caption:
+      "Centraliza la gestión de tus proyectos de construcción: obras, personal, materiales, presupuestos y documentación en una sola plataforma.",
+    image: "/productos/gestiobras.png",
+    href: "https://www.gestiobras.com/",
+    highlightColor: "#e8620f",
+    badgeColor: "#e8620f",
+  },
+  {
+    id: "mrsofttree",
+    name: "MR.SOFT Tree",
+    description: "Plataforma empresarial de enlaces",
+    caption:
+      "Reúne en un solo enlace los catálogos, videos y códigos QR de tu empresa, con tu marca y gestionados desde un solo panel.",
+    image: "/productos/mrsofttree.png",
+    href: "https://www.mrsoft-tree.com/",
+    highlightColor: "#7c3aed",
+    badgeColor: "#7c3aed",
+  },
+  {
+    id: "pelukeros",
+    name: "Pelukeros",
+    description: "Software para peluquerías y barberías",
+    caption:
+      "Citas, equipo, inventario y boletas electrónicas en una sola plataforma hecha para el negocio peruano.",
+    image: "/productos/pelukeros.png",
+    href: "https://www.pelukeros.net/",
+    highlightColor: "#b8892f",
+    badgeColor: "#b8892f",
   },
 ];
 
@@ -187,7 +232,9 @@ export default function Page() {
                   >
                     <div className="text-sm text-center">
                       <div className="text-gray-600">
-                        Más de {product.quantity} usuarios confían en
+                        {product.quantity
+                          ? `Más de ${product.quantity} usuarios confían en`
+                          : "Conoce"}
                       </div>
                       <div
                         className="font-bold"

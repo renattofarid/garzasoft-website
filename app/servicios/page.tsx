@@ -80,6 +80,33 @@ export default function GarzaSoftWebsite() {
       alt: "Imagen Comprobante-e",
       target: "_blank",
     },
+    {
+      href: "https://www.gestiobras.com/",
+      name: "Gestiobras",
+      description: "Software para gestión de constructoras",
+      img: "/productos/gestiobras_logo.png",
+      color: "#e8620f",
+      alt: "Imagen Gestiobras",
+      target: "_blank",
+    },
+    {
+      href: "https://www.mrsoft-tree.com/",
+      name: "MR.SOFT Tree",
+      description: "Plataforma empresarial de enlaces y códigos QR",
+      img: "/productos/mrsofttree_logo.png",
+      color: "#7c3aed",
+      alt: "Imagen MR.SOFT Tree",
+      target: "_blank",
+    },
+    {
+      href: "https://www.pelukeros.net/",
+      name: "Pelukeros",
+      description: "Software para gestión de peluquerías y barberías",
+      img: "/productos/pelukeros_logo.png",
+      color: "#b8892f",
+      alt: "Imagen Pelukeros",
+      target: "_blank",
+    },
   ];
 
   useEffect(() => {
@@ -176,13 +203,24 @@ export default function GarzaSoftWebsite() {
               target={producto.target}
               className="product-card bg-black/70 p-4 flex gap-4 items-center justify-start"
             >
-              <div className="relative size-14 md:size-20 aspect-square">
-                <Image
-                  src={producto.img}
-                  alt={producto.alt}
-                  fill
-                  className="object-cover rounded-full"
-                />
+              <div className="relative size-14 md:size-20 aspect-square shrink-0">
+                {producto.img ? (
+                  <Image
+                    src={producto.img}
+                    alt={producto.alt}
+                    fill
+                    className="object-cover rounded-full"
+                  />
+                ) : (
+                  <div
+                    role="img"
+                    aria-label={producto.alt}
+                    className="size-full rounded-full flex items-center justify-center text-white text-2xl md:text-4xl font-bold"
+                    style={{ backgroundColor: producto.color ?? "#6e7676" }}
+                  >
+                    {producto.name.charAt(0).toUpperCase()}
+                  </div>
+                )}
               </div>
               <Separator className="h-full w-0.5 bg-brand-gray" />
               <span className="text-white text-sm md:text-lg">
