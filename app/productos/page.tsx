@@ -121,6 +121,17 @@ const PRODUCTS: Product[] = [
     highlightColor: "#b8892f",
     badgeColor: "#b8892f",
   },
+  {
+    id: "vuelvo",
+    name: "Vuelvo+",
+    description: "Fideliza a tus clientes con cartillas digitales",
+    caption:
+      "Convierte cada visita en una razón para volver. Premia a tus clientes frecuentes con cartillas de visitas digitales: cada compra los acerca a su premio y cada premio los invita a regresar. Todo conectado con Gesrest, sin tarjetas de papel ni sellos que se pierden.",
+    image: "/productos/vuelvo_pantalla.svg",
+    href: "https://sistema.vuelvomas.com",
+    highlightColor: "#F97316",
+    badgeColor: "#F97316",
+  },
 ];
 
 export default function Page() {
@@ -146,7 +157,7 @@ export default function Page() {
               start: "top 80%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
 
         gsap.fromTo(
@@ -162,7 +173,7 @@ export default function Page() {
               start: "top 85%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
       });
     });
@@ -194,7 +205,17 @@ export default function Page() {
                   className="font-semibold text-sm uppercase tracking-wide mb-4"
                   style={{ color: product.highlightColor }}
                 >
-                  {product.name}
+                  {product.id === "vuelvo" ? (
+                    <img
+                      src="/productos/vuelvo_logo.svg"
+                      alt="Vuelvo+, Haz que vuelvan"
+                      width={213}
+                      height={60}
+                      className="h-auto w-full max-w-[213px]"
+                    />
+                  ) : (
+                    product.name
+                  )}
                 </div>
 
                 <h2 className="text-4xl md:text-5xl font-bold text-[#000000] mb-6">
@@ -205,11 +226,15 @@ export default function Page() {
                   {product.caption}
                 </p>
 
-                <Link href={product.href} target="_blank">
+                <Link
+                  href={product.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Button
                     className={cn(
                       "text-black font-semibold px-8 py-3 rounded-lg flex items-center gap-2",
-                      product.highlightColor && "border-2 border-solid"
+                      product.highlightColor && "border-2 border-solid",
                     )}
                     style={{
                       borderColor: product.highlightColor,
@@ -224,7 +249,13 @@ export default function Page() {
               </div>
 
               <div className="relative product-image">
-                <div className="relative mx-auto w-80">
+                <div
+                  className={
+                    product.id === "vuelvo"
+                      ? "relative mx-auto w-full max-w-80"
+                      : "relative mx-auto w-80"
+                  }
+                >
                   <Iphone15Pro className="size-full" src={product.image} />
                   <div
                     className="absolute -bottom-4 -right-4 bg-white rounded-lg shadow-lg p-4 border-2"
