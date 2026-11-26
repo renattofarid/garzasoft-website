@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844">
+  <rect width="390" height="844" fill="#fff7ed"/>
+  <rect y="0" width="390" height="300" fill="#f97316"/>
+  <text x="195" y="150" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700" fill="#fff" text-anchor="middle">Vuelvo+</text>
+  <text x="195" y="195" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#fff" text-anchor="middle">Una cuenta, todos tus sellos.</text>
+  <rect x="40" y="350" width="310" height="52" rx="10" fill="#fff" stroke="#fdba74"/>
+  <rect x="40" y="420" width="310" height="52" rx="10" fill="#fff" stroke="#fdba74"/>
+  <rect x="40" y="500" width="310" height="52" rx="10" fill="#f97316"/>
+  <text x="195" y="533" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">Ingresar</text>
+</svg>

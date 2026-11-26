@@ -51,7 +51,7 @@ export default function GarzaSoftWebsite() {
     {
       href: "https://www.hotelhub.com.pe/",
       name: "HotelHub",
-      description: "Software para gestión de hoteles",
+      description: "Plataforma de gestión hotelera",
       img: "/productos/Logo_HotelHub.png",
       alt: "Imagen HotelHub",
       target: "_blank",
@@ -59,7 +59,7 @@ export default function GarzaSoftWebsite() {
     {
       href: "https://pulso-web-ten.vercel.app/",
       name: "Pulso",
-      description: "Software para gestión de clínicas",
+      description: "Software de gestión de salud",
       img: "/productos/Logo_Pulso.png",
       alt: "Imagen Pulso",
       target: "_blank",
@@ -67,7 +67,7 @@ export default function GarzaSoftWebsite() {
     {
       href: "https://360sys.com.pe/",
       name: "360sys",
-      description: "Software para empresas de Punto de Venta",
+      description: "Software de gestión empresarial",
       img: "/productos/Logo_360.png",
       alt: "Imagen 360sys",
       target: "_blank",
@@ -75,7 +75,7 @@ export default function GarzaSoftWebsite() {
     {
       href: "https://comprobante-e.com/",
       name: "Comprobante-e",
-      description: "Software para emisión de comprobantes electrónicos",
+      description: "Generador de comprobantes electrónicos SUNAT",
       img: "/productos/Logo_Comprobante.png",
       alt: "Imagen Comprobante-e",
       target: "_blank",
@@ -83,7 +83,8 @@ export default function GarzaSoftWebsite() {
     {
       href: "https://www.gestiobras.com/",
       name: "Gestiobras",
-      description: "Software para gestión de constructoras",
+      description: "Software para gestión de proyectos en empresas constructoras",
+      hidden: true,
       img: "/productos/gestiobras_logo.png",
       color: "#e8620f",
       alt: "Imagen Gestiobras",
@@ -92,7 +93,7 @@ export default function GarzaSoftWebsite() {
     {
       href: "https://www.mrsoft-tree.com/",
       name: "MR.SOFT Tree",
-      description: "Plataforma empresarial de enlaces y códigos QR",
+      description: "Plataforma empresarial de presentación de empresas",
       img: "/productos/mrsofttree_logo.png",
       color: "#7c3aed",
       alt: "Imagen MR.SOFT Tree",
@@ -102,6 +103,7 @@ export default function GarzaSoftWebsite() {
       href: "https://www.pelukeros.net/",
       name: "Pelukeros",
       description: "Software para gestión de peluquerías y barberías",
+      hidden: true,
       img: "/productos/pelukeros_logo.png",
       color: "#b8892f",
       alt: "Imagen Pelukeros",
@@ -196,7 +198,7 @@ export default function GarzaSoftWebsite() {
           ref={productosRef}
           className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10 justify-center relative z-10 max-w-screen-xl mx-auto px-6"
         >
-          {productos.map((producto, idx) => (
+          {productos.filter((p) => !p.hidden).map((producto, idx) => (
             <Link
               key={idx}
               href={producto.href}

@@ -25,9 +25,10 @@ type Product = {
   href: string;
   highlightColor: string;
   badgeColor: string;
+  hidden?: boolean;
 };
 
-const PRODUCTS: Product[] = [
+const ALL_PRODUCTS: Product[] = [
   {
     id: "gesrest",
     name: "GESREST",
@@ -44,7 +45,7 @@ const PRODUCTS: Product[] = [
     id: "360sys",
     name: "360Sys",
     quantity: 60,
-    description: "Sistema de gestión empresarial",
+    description: "Software de gestión empresarial",
     caption:
       "La plataforma que facilita la atención en tu Punto de Venta. Ideal para mini mercado, ferretería, farmacia, panadería, heladería y similares",
     image: "/productos/360sys.png",
@@ -68,7 +69,7 @@ const PRODUCTS: Product[] = [
     id: "pulsoplus",
     name: "Pulso Plus",
     quantity: 20,
-    description: "Sistema de gestión de salud",
+    description: "Software de gestión de salud",
     caption:
       "Pulso+ es una plataforma tecnológica integral desarrollada para mejorar la calidad de vida de millones de personas y familias a través de la gestión de datos y la automatización de procesos en empresas dedicadas al servicio de salud.",
     image: "/productos/pulsoplus.png",
@@ -77,10 +78,36 @@ const PRODUCTS: Product[] = [
     badgeColor: "#112464",
   },
   {
+    id: "vuelvo",
+    name: "Vuelvo+",
+    description:
+      "Software para automatizar estrategias de fidelización de clientes",
+    caption:
+      "Una cuenta, todos tus sellos. Tus clientes ingresan con su DNI a sus cartillas de fidelización y tu negocio automatiza sus estrategias de recompra.",
+    image: "/productos/vuelvo.svg",
+    href: "https://www.vuelvomas.com/",
+    highlightColor: "#f97316",
+    badgeColor: "#f97316",
+  },
+  {
+    id: "historialpeludo",
+    name: "Historial Peludo",
+    description:
+      "Aplicación móvil para llevar el seguimiento de la salud de nuestra mascota",
+    caption:
+      "Lleva el historial de salud de tu mascota en un solo lugar: vacunas, consultas y recordatorios.",
+    // PROVISIONAL: falta logo (Alex y Alvaro), URL, captura y color definitivos.
+    image: "/productos/vuelvo.svg",
+    href: "#",
+    highlightColor: "#14b8a6",
+    badgeColor: "#14b8a6",
+    hidden: true,
+  },
+  {
     id: "comprobantee",
     name: "Comprobante-e",
     quantity: 500,
-    description: "Generador de comprobantes electrónicos",
+    description: "Generador de comprobantes electrónicos SUNAT",
     caption:
       "Emite tus facturas y boletas electrónicas con seguridad, sin contratiempos y desde cualquier lugar.",
     image: "/productos/comprobantee.png",
@@ -89,20 +116,35 @@ const PRODUCTS: Product[] = [
     badgeColor: "#cd3b27",
   },
   {
+    id: "nextcont",
+    name: "NextCont",
+    description:
+      "Plataforma de software contable: Registro de Compras, Registro de Ventas, Libro Diario, Libro Caja Bancos, Libro Mayor",
+    caption:
+      "Plataforma de software contable para llevar tus registros y libros electrónicos en un solo lugar.",
+    // PROVISIONAL: falta URL (web de Esgardo), captura y color definitivos.
+    image: "/productos/vuelvo.svg",
+    href: "#",
+    highlightColor: "#2563eb",
+    badgeColor: "#2563eb",
+    hidden: true,
+  },
+  {
     id: "gestiobras",
     name: "Gestiobras",
-    description: "Software para gestión de constructoras",
+    description: "Software para gestión de proyectos en empresas constructoras",
     caption:
       "Centraliza la gestión de tus proyectos de construcción: obras, personal, materiales, presupuestos y documentación en una sola plataforma.",
     image: "/productos/gestiobras.png",
     href: "https://www.gestiobras.com/",
+    hidden: true,
     highlightColor: "#e8620f",
     badgeColor: "#e8620f",
   },
   {
     id: "mrsofttree",
     name: "MR.SOFT Tree",
-    description: "Plataforma empresarial de enlaces",
+    description: "Plataforma empresarial de presentación de empresas",
     caption:
       "Reúne en un solo enlace los catálogos, videos y códigos QR de tu empresa, con tu marca y gestionados desde un solo panel.",
     image: "/productos/mrsofttree.png",
@@ -118,10 +160,13 @@ const PRODUCTS: Product[] = [
       "Citas, equipo, inventario y boletas electrónicas en una sola plataforma hecha para el negocio peruano.",
     image: "/productos/pelukeros.png",
     href: "https://www.pelukeros.net/",
+    hidden: true,
     highlightColor: "#b8892f",
     badgeColor: "#b8892f",
   },
 ];
+
+const PRODUCTS = ALL_PRODUCTS.filter((p) => !p.hidden);
 
 export default function Page() {
   const sectionsRef = useRef<(HTMLElement | null)[]>([]);
